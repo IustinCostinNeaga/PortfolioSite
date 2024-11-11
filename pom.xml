@@ -68,6 +68,17 @@
       <version>${junit-jupiter.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>gg.jte</groupId>
+      <artifactId>jte</artifactId>
+      <version>3.1.13</version>
+    </dependency>
+    <dependency>
+      <groupId>gg.jte</groupId>
+      <artifactId>jte-kotlin</artifactId>
+      <version>3.1.13</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
 
   <build>
