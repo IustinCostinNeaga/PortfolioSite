@@ -1,1 +1,38 @@
-Ciao mondo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OKYC BackOffice</title>
+  <script src="https://unpkg.com/htmx.org@1.9.12"
+          integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+          crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/json-enc.js"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/sse.js"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+<div id="page" class ="w-screen h-screen flex"
+     hx-post="http://localhost:8080/dev/operator/api/login"
+     hx-vals='{"username": "valerio", "password": "pass"}'
+     hx-ext="json-enc" hx-target="#login" hx-trigger="load" hx-swap="outerHTML">
+
+  <div id="sidebar" class="h-full w-[80px] bg-[#041C54]">
+    <button>
+
+    </button>
+  </div>
+  <div id="index" class="h-full w-[400px] bg-[#192D5C]">
+
+  </div>
+  <div id="content" class="h-full flex-1 bg-[#1C3471]">
+
+  </div>
+
+</div>
+</body>
+
+</html>
