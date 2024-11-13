@@ -7,6 +7,7 @@ import gg.jte.runtime.Template
 import io.vertx.core.AbstractVerticle
 import io.vertx.core.Promise
 import io.vertx.ext.web.Router
+import it.portfolio.starter.apis.GetCvIndexAPI
 import it.portfolio.starter.apis.GetFrontPageAPI
 import java.nio.file.Path
 
@@ -18,6 +19,7 @@ class MainVerticle : AbstractVerticle() {
     val templateEngine = TemplateEngine.create(codeResolver, ContentType.Html)
 
     GetFrontPageAPI(router, templateEngine)
+    GetCvIndexAPI(router, templateEngine)
 
     vertx
       .createHttpServer()
