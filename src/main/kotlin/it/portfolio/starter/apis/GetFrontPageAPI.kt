@@ -12,7 +12,7 @@ class GetFrontPageAPI(
 ) : Handler<RoutingContext> {
 
   init {
-    router.get("/home-page")
+    router.get("/")
       .handler(this)
   }
 
