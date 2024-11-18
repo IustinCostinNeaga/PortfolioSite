@@ -1,11 +1,26 @@
 <div class="flex flex-col px-2 py-4 text-white" x-data="{show_index: true}">
   <div class="flex gap-1 hover:cursor-pointer" @click="show_index = !show_index">
-    <svg x-show="!show_index" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+    <svg x-show="!show_index" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+         fill="#FFFFFF">
       <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
     </svg>
-    <svg x-show="show_index" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+    <svg x-show="show_index" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+         fill="#FFFFFF">
       <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z"/>
     </svg>
     <h4 class="font-semibold">Iustin Neaga's CV</h4>
+  </div>
+  <div x-show="show_index" class="flex flex-col gap-2 px-8 py-2">
+    !{val indexAsList = listOf("profilo", "educazione", "esperienza", "skills", "linguaggi")}
+    @for(index in indexAsList)
+      <div class="hover:cursor-pointer">
+        <h5 class="flex flex-col items-center, capitalize"
+            hx-get="http://localhost:8080/cv/${index}"
+            hx-swap="innerHTML"
+            hx-target="#index"
+            hx-push-url="true"
+        >${index}</h5>
+      </div>
+    @endfor
   </div>
 </div>
